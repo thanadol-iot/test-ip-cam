@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แสดงวิดีโอจากกล้อง IP</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        video {
+            width: 80%;
+            max-width: 800px;
+            border: 2px solid #333;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <video controls autoplay>
+        <source src="http://192.168.1.1/stream" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        // Optional: Check if video is playing and handle errors
+        const videoElement = document.querySelector('video');
+        
+        videoElement.addEventListener('error', function() {
+            console.error('เกิดข้อผิดพลาดในการเล่นวิดีโอ');
+        });
+    </script>
+</body>
+</html>
